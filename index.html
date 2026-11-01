@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI宣传片制作 · 启讯科技</title>
+<meta name="description" content="福建启讯信息科技有限公司 AI宣传片制作服务：九步合作流程与联系方式。AI video production by Qixun: a nine-step workflow.">
+<style>
+@property --a{syntax:'<angle>';inherits:false;initial-value:0deg}
+:root{
+  --bg:#0d0c0b;--bg-2:#151311;--paper:#f4f1ec;--card:#fffdf9;
+  --text:#f3eee6;--muted:#9a9184;--line:rgba(255,240,220,.1);
+  --t-dark:#1b1814;--t-muted:#6f675c;--t-line:#e6e0d6;
+  --amber:#ff9b3d;--gold:#f2c27a;--coral:#ff6a4d;--sand:#ffe2b8;--rust:#c46a12;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC","Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow:hidden}
+a{color:inherit;text-decoration:none}
+.num{font-variant-numeric:tabular-nums}
+html[lang=en] .zh,html[lang=zh-CN] .en{display:none!important}
+
+.deck{height:100vh;height:100dvh;overflow-y:auto;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+.slide{min-height:100vh;min-height:100dvh;scroll-snap-align:start;position:relative;display:flex;align-items:center;padding:96px 0 80px;overflow:hidden;isolation:isolate}
+.in{width:100%;max-width:1160px;margin:0 auto;padding:0 40px;position:relative;z-index:2}
+.light{background:var(--paper);color:var(--t-dark)}
+.dark2{background:var(--bg-2)}
+
+/* flowing aurora */
+.aurora{position:absolute;inset:-20%;z-index:0;pointer-events:none;filter:blur(80px);opacity:.55}
+.aurora i{position:absolute;border-radius:50%;mix-blend-mode:screen}
+.aurora i:nth-child(1){width:46vw;height:46vw;background:radial-gradient(circle,var(--amber),transparent 65%);left:50%;top:5%;animation:f1 18s ease-in-out infinite alternate}
+.aurora i:nth-child(2){width:38vw;height:38vw;background:radial-gradient(circle,var(--coral),transparent 65%);left:65%;top:40%;animation:f2 22s ease-in-out infinite alternate}
+.aurora i:nth-child(3){width:34vw;height:34vw;background:radial-gradient(circle,var(--gold),transparent 65%);left:30%;top:50%;animation:f3 26s ease-in-out infinite alternate;opacity:.6}
+.aurora.soft{opacity:.28}
+.light .aurora{opacity:.22;filter:blur(90px)}
+.light .aurora i{mix-blend-mode:multiply}
+@keyframes f1{to{transform:translate(-22vw,14vh) scale(1.15)}}
+@keyframes f2{to{transform:translate(-30vw,-18vh) scale(.9)}}
+@keyframes f3{to{transform:translate(24vw,-20vh) scale(1.2)}}
+/* light streaks */
+.streaks{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.streaks b{position:absolute;height:1px;width:40vw;background:linear-gradient(90deg,transparent,rgba(255,200,140,.75),transparent);transform:rotate(-18deg);animation:sweep 9s linear infinite;opacity:0}
+.streaks b:nth-child(1){top:22%}
+.streaks b:nth-child(2){top:48%;animation-delay:3s;width:30vw}
+.streaks b:nth-child(3){top:74%;animation-delay:6s}
+@keyframes sweep{0%{left:-45vw;opacity:0}10%{opacity:1}60%{opacity:1}100%{left:110vw;opacity:0}}
+.grain{position:absolute;inset:0;z-index:1;pointer-events:none;background-image:linear-gradient(rgba(255,240,220,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,240,220,.03) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at 60% 40%,#000,transparent 75%)}
+
+/* shimmer text */
+.shine{background:linear-gradient(100deg,var(--gold) 0%,#fff6e8 22%,var(--amber) 44%,var(--coral) 60%,var(--gold) 80%,#fff6e8 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite}
+@keyframes shine{to{background-position:-250% 0}}
+
+/* flowing border */
+.flow{position:relative}
+.flow::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:conic-gradient(from var(--a),transparent 0 62%,var(--amber) 74%,var(--sand) 80%,var(--coral) 86%,transparent 96%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:spin 6s linear infinite;pointer-events:none}
+.flow:nth-child(2)::before{animation-delay:-2s}.flow:nth-child(3)::before{animation-delay:-4s}.flow:nth-child(4)::before{animation-delay:-1s}
+@keyframes spin{to{--a:360deg}}
+
+/* reveal */
+.slide.on .rv{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.slide.on .rv:nth-child(2){animation-delay:.08s}.slide.on .rv:nth-child(3){animation-delay:.16s}
+.slide.on .rv:nth-child(4){animation-delay:.24s}.slide.on .rv:nth-child(5){animation-delay:.32s}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}}
+
+/* chrome */
+.top{position:fixed;inset:0 0 auto 0;height:68px;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:0 40px;transition:color .3s,background .3s}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px;letter-spacing:.5px}
+.mark{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--gold),var(--amber) 50%,var(--coral));background-size:200% 200%;animation:mk 6s ease infinite;color:#1b1206;display:grid;place-items:center;font-size:14px;font-weight:800}
+@keyframes mk{50%{background-position:100% 100%}}
+.tools{display:flex;gap:10px;align-items:center}
+.lang{display:flex;border:1px solid currentColor;border-radius:99px;padding:2px;font-size:12px}
+.lang button{border:none;background:none;color:inherit;font:inherit;padding:5px 11px;border-radius:99px;cursor:pointer;opacity:.6}
+.lang button.on{background:var(--amber);color:#1b1206;opacity:1;font-weight:600}
+.top .go{font-size:13px;padding:7px 16px;border:1px solid currentColor;border-radius:99px;opacity:.8;transition:.2s}
+.top .go:hover{opacity:1}
+body.lt .top{color:var(--t-dark)}
+.dots{position:fixed;right:28px;top:50%;transform:translateY(-50%);z-index:20;display:flex;flex-direction:column;gap:14px}
+.dots button{width:8px;height:8px;border-radius:99px;border:none;background:rgba(255,240,220,.25);cursor:pointer;transition:.3s;padding:0}
+.dots button.on{height:28px;background:linear-gradient(var(--gold),var(--coral))}
+body.lt .dots button{background:rgba(27,24,20,.18)}
+body.lt .dots button.on{background:linear-gradient(var(--amber),var(--coral))}
+.pg{position:fixed;left:40px;bottom:28px;z-index:20;font-size:12px;letter-spacing:2px;color:var(--muted)}
+body.lt .pg{color:var(--t-muted)}
+.bar{position:fixed;left:0;top:0;height:2px;z-index:30;width:0;transition:width .4s;background:linear-gradient(90deg,var(--gold),var(--amber),var(--coral),var(--gold));background-size:250% 100%;animation:shine 3s linear infinite}
+
+/* type */
+.kicker{font-size:13px;letter-spacing:3px;color:var(--gold);font-weight:600;text-transform:uppercase;margin-bottom:20px;display:block}
+.light .kicker{color:var(--rust)}
+h1{font-size:clamp(40px,6.4vw,84px);line-height:1.1;font-weight:700;letter-spacing:.5px;color:#fff}
+html[lang=en] h1{font-size:clamp(36px,5.6vw,76px);letter-spacing:-.5px}
+h2{font-size:clamp(30px,4vw,52px);line-height:1.2;font-weight:700;letter-spacing:.3px}
+.lead{font-size:clamp(16px,1.6vw,20px);color:var(--muted);margin-top:24px;max-width:640px}
+.light .lead{color:var(--t-muted)}
+
+/* cover */
+.types{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
+.types span{font-size:14px;padding:8px 16px;border:1px solid var(--line);border-radius:99px;color:#d9d0c3;background:rgba(255,240,220,.03);backdrop-filter:blur(6px)}
+.types span span{padding:0;border:0;background:none;backdrop-filter:none}
+.cta{display:flex;gap:12px;margin-top:44px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 24px;border-radius:10px;font-size:15px;font-weight:600;transition:.2s;border:1px solid transparent;cursor:pointer;font-family:inherit;position:relative;overflow:hidden}
+.btn-p{background:linear-gradient(120deg,var(--gold),var(--amber) 55%,var(--coral));color:#1b1206}
+.btn-p::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.6),transparent);transform:skewX(-20deg);animation:btn 3.2s ease-in-out infinite}
+@keyframes btn{0%,40%{left:-60%}80%,100%{left:130%}}
+.btn-p:hover{filter:brightness(1.06)}
+.btn-g{border-color:var(--line);color:#fff;background:rgba(255,240,220,.03)}
+.btn-g:hover{background:rgba(255,240,220,.08)}
+.hint{position:absolute;left:50%;bottom:32px;transform:translateX(-50%);font-size:12px;color:var(--muted);letter-spacing:2px;display:flex;flex-direction:column;align-items:center;gap:8px;z-index:2}
+.hint i{width:1px;height:28px;background:linear-gradient(var(--amber),transparent);animation:dn 1.8s infinite}
+@keyframes dn{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* overview */
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+.ph{background:var(--card);border:1px solid var(--t-line);border-radius:16px;padding:32px 28px;box-shadow:0 10px 30px rgba(60,40,10,.06)}
+.ph .n{font-size:13px;color:var(--rust);font-weight:600;letter-spacing:2px}
+.ph h3{font-size:24px;margin:10px 0 20px}
+.ph ol{list-style:none;display:flex;flex-direction:column;gap:12px}
+.ph li{display:flex;align-items:center;gap:12px;font-size:15px}
+.ph li b{width:26px;height:26px;border-radius:50%;background:#fff0dc;color:var(--rust);display:grid;place-items:center;font-size:12px;flex-shrink:0}
+.ph li em{font-style:normal}
+.ph li .dur{margin-left:auto;font-size:13px;color:var(--t-muted);white-space:nowrap}
+.ph .d{margin-top:24px;padding-top:16px;border-top:1px solid var(--t-line);font-size:13px;color:var(--t-muted);display:flex;justify-content:space-between;gap:12px}
+.ph .d b{color:var(--t-dark);font-weight:600;text-align:right}
+.total{margin-top:28px;display:flex;align-items:center;gap:16px;font-size:14px;color:var(--t-muted);flex-wrap:wrap}
+.total b{font-size:20px;color:var(--t-dark)}
+
+/* step detail */
+.steps{display:grid;gap:16px;margin-top:48px}
+.st{display:grid;grid-template-columns:72px 1.1fr 1fr 1fr auto;gap:24px;align-items:center;padding:24px 28px;border:1px solid var(--line);border-radius:14px;background:rgba(255,240,220,.03);backdrop-filter:blur(8px)}
+.st .no{font-size:36px;font-weight:700;line-height:1}
+.st h3{font-size:20px;color:#fff;font-weight:600}
+.st h3 small{display:block;font-size:13px;color:var(--muted);font-weight:400;margin-top:4px}
+.st dt{font-size:12px;color:var(--muted);letter-spacing:1px;margin-bottom:4px;text-transform:uppercase}
+.st dd{font-size:15px;color:#e2dacd}
+.st .meta{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.tag{font-size:12px;padding:3px 10px;border-radius:6px;white-space:nowrap;background:rgba(255,240,220,.07);color:#d9d0c3}
+.tag.k{background:rgba(255,155,61,.14);color:var(--amber)}
+.tag.m{background:rgba(242,194,122,.14);color:var(--gold)}
+
+/* payment */
+.pay{display:grid;grid-template-columns:50fr 20fr 30fr;margin-top:48px;border-radius:16px;border:1px solid var(--t-line);background:var(--card);box-shadow:0 10px 30px rgba(60,40,10,.06)}
+.pay>div{padding:36px 32px}
+.pay>div+div{border-left:1px solid var(--t-line)}
+.pay b{font-size:clamp(36px,4.4vw,56px);font-weight:700;display:block;line-height:1;color:var(--t-dark)}
+.pay>div:first-child b{background:linear-gradient(100deg,#e07a12,var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent}
+.pay .lb{display:block;font-size:15px;color:var(--t-dark);margin-top:14px;font-weight:600}
+.pay small{font-size:13px;color:var(--t-muted)}
+.rules{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 40px;margin-top:40px}
+.rules p{font-size:15px;color:var(--t-muted);padding-left:20px;position:relative}
+.rules p::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:linear-gradient(var(--amber),var(--coral))}
+
+/* contact */
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.cards{display:grid;gap:14px}
+.cc{padding:24px;border:1px solid var(--line);border-radius:14px;background:rgba(255,240,220,.04);backdrop-filter:blur(8px);transition:.2s;display:block;position:relative;width:100%;text-align:left;font:inherit;color:inherit;cursor:pointer}
+.cc:hover{background:rgba(255,155,61,.08)}
+.cc .ic{width:36px;height:36px;border-radius:9px;background:rgba(255,155,61,.14);color:var(--amber);display:grid;place-items:center;margin-bottom:16px}
+.cc small{font-size:12px;color:var(--muted);letter-spacing:1px;display:block}
+.cc b{user-select:text;display:block;font-size:22px;font-weight:500;color:#fff;margin-top:4px;word-break:break-all}
+.cc .cp{position:absolute;right:24px;top:28px;font-style:normal;font-size:12px;color:var(--gold)}
+.co{margin-top:32px;font-size:15px;color:#d9d0c3}
+.co small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.foot{position:absolute;left:0;right:0;bottom:28px;text-align:center;font-size:12px;color:var(--muted);z-index:2;padding:0 20px}
+
+@media (max-width:960px){
+  .phases{grid-template-columns:1fr}
+  .st{grid-template-columns:48px 1fr;gap:12px 16px}
+  .st .no{font-size:28px;grid-row:span 2}
+  .st dl{grid-column:2}
+  .st .meta{grid-column:2;flex-direction:row;flex-wrap:wrap;align-items:flex-start}
+  .cgrid{grid-template-columns:1fr;gap:40px}
+  .rules{grid-template-columns:1fr}
+  .top{background:rgba(13,12,11,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  body.lt .top{background:rgba(244,241,236,.9)}
+}
+@media (max-width:640px){
+  .in{padding:0 20px}
+  .top{padding:0 16px}
+  .top .go,.pg,.dots,.hint{display:none}
+  .slide{padding:84px 0 72px}
+  .deck{scroll-snap-type:none}
+  .types span{font-size:13px;padding:6px 12px}
+  .pay{grid-template-columns:1fr}
+  .pay>div+div{border-left:none;border-top:1px solid var(--t-line)}
+  .pay>div{padding:24px}
+  .st{padding:20px}
+  .cc b{font-size:19px}
+  .cc .cp{top:24px;right:20px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important}
+  .deck{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<div class="bar" id="bar"></div>
+<header class="top">
+  <a class="brand" href="#s1"><span class="mark">启</span><span class="zh">启讯科技</span><span class="en">QIXUN</span></a>
+  <div class="tools">
+    <div class="lang" role="group" aria-label="Language"><button data-l="zh-CN">中</button><button data-l="en">EN</button></div>
+    <a class="go" href="#s6"><span class="zh">联系我们</span><span class="en">Contact</span></a>
+  </div>
+</header>
+<nav class="dots" id="dots" aria-label="Slides"></nav>
+<div class="pg num" id="pg">01 / 06</div>
+
+<main class="deck" id="deck">
+
+<!-- 1 Cover -->
+<section class="slide" id="s1" data-zh="封面" data-en="Home">
+  <div class="aurora"><i></i><i></i><i></i></div><div class="grain"></div><div class="streaks"><b></b><b></b><b></b></div>
+  <div class="in">
+    <span class="kicker rv"><span class="zh">AI 宣传片制作服务</span><span class="en">AI Video Production</span></span>
+    <h1 class="rv"><span class="zh">AI 生成 + 专业制作<br><span class="shine">九步交付宣传片</span></span><span class="en">AI-generated,<br><span class="shine">professionally delivered</span></span></h1>
+    <p class="lead rv"><span class="zh">策划、脚本、分镜、AI生成、剪辑包装、配音字幕，一个团队全流程完成。</span><span class="en">Planning, scripting, storyboarding, AI generation, editing and voice-over. One team, end to end, in nine clear steps.</span></p>
+    <div class="types rv">
+      <span><span class="zh">企业形象片</span><span class="en">Corporate Films</span></span>
+      <span><span class="zh">品牌宣传片</span><span class="en">Brand Stories</span></span>
+      <span><span class="zh">产品介绍片</span><span class="en">Product Videos</span></span>
+      <span><span class="zh">活动与展会</span><span class="en">Events &amp; Expos</span></span>
+      <span><span class="zh">空间循环播放</span><span class="en">Display Loops</span></span>
+      <span><span class="zh">社交媒体短视频</span><span class="en">Social Shorts</span></span>
+    </div>
+    <div class="cta rv"><a class="btn btn-p" href="#s2"><span class="zh">查看合作流程</span><span class="en">See the Process</span></a><a class="btn btn-g" href="#s6"><span class="zh">联系我们</span><span class="en">Get in Touch</span></a></div>
+  </div>
+  <div class="hint"><span class="zh">向下</span><span class="en">SCROLL</span><i></i></div>
+</section>
+
+<!-- 2 Overview -->
+<section class="slide light" id="s2" data-zh="流程总览" data-en="Overview">
+  <div class="aurora"><i></i><i></i><i></i></div>
+  <div class="in">
+    <span class="kicker rv"><span class="zh">合作流程</span><span class="en">How We Work</span></span>
+    <h2 class="rv"><span class="zh">三个阶段，九个步骤</span><span class="en">Three phases. Nine steps.</span></h2>
+    <div class="phases">
+      <div class="ph flow rv">
+        <div class="n">PHASE 01</div><h3><span class="zh">沟通与方案</span><span class="en">Discover &amp; Propose</span></h3>
+        <ol>
+          <li><b>1</b><em><span class="zh">需求沟通</span><span class="en">Kick-off</span></em><span class="dur num">1–2 <span class="zh">天</span><span class="en">days</span></span></li>
+          <li><b>2</b><em><span class="zh">需求填写</span><span class="en">Creative brief</span></em><span class="dur num">2–3 <span class="zh">天</span><span class="en">days</span></span></li>
+          <li><b>3</b><em><span class="zh">方案与报价</span><span class="en">Proposal &amp; quote</span></em><span class="dur num">2–3 <span class="zh">天</span><span class="en">days</span></span></li>
+        </ol>
+        <div class="d"><span><span class="zh">交付</span><span class="en">Output</span></span><b><span class="zh">创意提案 + 报价单</span><span class="en">Concept + quote</span></b></div>
+      </div>
+      <div class="ph flow rv">
+        <div class="n">PHASE 02</div><h3><span class="zh">确认与制作</span><span class="en">Approve &amp; Produce</span></h3>
+        <ol>
+          <li><b>4</b><em><span class="zh">签约付款</span><span class="en">Contract</span></em><span class="dur num">1–3 <span class="zh">天</span><span class="en">days</span></span></li>
+          <li><b>5</b><em><span class="zh">脚本确认</span><span class="en">Script</span></em><span class="dur num">3–5 <span class="zh">天</span><span class="en">days</span></span></li>
+          <li><b>6</b><em><span class="zh">分镜与风格</span><span class="en">Storyboard &amp; style</span></em><span class="dur num">3–7 <span class="zh">天</span><span class="en">days</span></span></li>
+          <li><b>7</b><em><span class="zh">AI生成与剪辑</span><span class="en">AI production</span></em><span class="dur num">5–15 <span class="zh">天</span><span class="en">days</span></span></li>
+        </ol>
+        <div class="d"><span><span class="zh">交付</span><span class="en">Output</span></span><b><span class="zh">粗剪版</span><span class="en">Rough cut</span></b></div>
+      </div>
+      <div class="ph flow rv">
+        <div class="n">PHASE 03</div><h3><span class="zh">修改与交付</span><span class="en">Refine &amp; Deliver</span></h3>
+        <ol>
+          <li><b>8</b><em><span class="zh">修改精剪</span><span class="en">Revisions</span></em><span class="dur num">3–6 <span class="zh">天</span><span class="en">days</span></span></li>
+          <li><b>9</b><em><span class="zh">成片交付</span><span class="en">Final delivery</span></em><span class="dur num">1–2 <span class="zh">天</span><span class="en">days</span></span></li>
+        </ol>
+        <div class="d"><span><span class="zh">交付</span><span class="en">Output</span></span><b><span class="zh">成片 + 授权说明</span><span class="en">Final film + license</span></b></div>
+      </div>
+    </div>
+    <div class="total rv"><span class="zh">签约后制作周期</span><span class="en">Production time after signing</span><b class="num"><span class="zh">15–40 个工作日</span><span class="en">15–40 working days</span></b><span class="zh">视影片时长与复杂度而定，不含审批等待时间</span><span class="en">depending on length and complexity, excluding approval time</span></div>
+  </div>
+</section>
+
+<!-- 3 Phase 1 -->
+<section class="slide" id="s3" data-zh="沟通与方案" data-en="Phase 1">
+  <div class="aurora soft"><i></i><i></i><i></i></div><div class="streaks"><b></b><b></b><b></b></div>
+  <div class="in">
+    <span class="kicker rv">PHASE 01 · <span class="zh">沟通与方案</span><span class="en">Discover &amp; Propose</span></span>
+    <h2 class="rv" style="color:#fff"><span class="zh">先把需求说清楚</span><span class="en">Get the brief right first</span></h2>
+    <div class="steps">
+      <div class="st flow rv"><div class="no num shine">01</div><h3><span class="zh">需求沟通<small>线上会议或上门拜访</small></span><span class="en">Kick-off<small>Online call or on-site visit</small></span></h3>
+        <dl><dt><span class="zh">我们</span><span class="en">We</span></dt><dd><span class="zh">了解品牌定位、目标受众与使用场景</span><span class="en">Learn your brand, audience and use cases</span></dd></dl>
+        <dl><dt><span class="zh">您</span><span class="en">You</span></dt><dd><span class="zh">提供企业介绍及过往宣传物料</span><span class="en">Share your company profile and past materials</span></dd></dl>
+        <div class="meta"><span class="tag num">1–2 <span class="zh">天</span><span class="en">days</span></span></div></div>
+      <div class="st flow rv"><div class="no num shine">02</div><h3><span class="zh">需求填写<small>Brief 与素材准备</small></span><span class="en">Creative Brief<small>Brief &amp; assets</small></span></h3>
+        <dl><dt><span class="zh">我们</span><span class="en">We</span></dt><dd><span class="zh">提供需求表与素材清单</span><span class="en">Provide the brief form and asset checklist</span></dd></dl>
+        <dl><dt><span class="zh">您</span><span class="en">You</span></dt><dd><span class="zh">填写需求表，按清单准备素材</span><span class="en">Complete the brief and prepare assets</span></dd></dl>
+        <div class="meta"><span class="tag num">2–3 <span class="zh">天</span><span class="en">days</span></span></div></div>
+      <div class="st flow rv"><div class="no num shine">03</div><h3><span class="zh">方案与报价<small>创意方向 + 报价单</small></span><span class="en">Proposal &amp; Quote<small>Concept + quotation</small></span></h3>
+        <dl><dt><span class="zh">我们</span><span class="en">We</span></dt><dd><span class="zh">提供 1~2 个创意方向及报价</span><span class="en">Present 1–2 creative directions with a quote</span></dd></dl>
+        <dl><dt><span class="zh">您</span><span class="en">You</span></dt><dd><span class="zh">确定创意方向、服务档次及交付规格</span><span class="en">Choose the direction, service tier and specs</span></dd></dl>
+        <div class="meta"><span class="tag num">2–3 <span class="zh">天</span><span class="en">days</span></span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 Phase 2 -->
+<section class="slide dark2" id="s4" data-zh="确认与制作" data-en="Phase 2">
+  <div class="aurora soft"><i></i><i></i><i></i></div>
+  <div class="in">
+    <span class="kicker rv">PHASE 02 · <span class="zh">确认与制作</span><span class="en">Approve &amp; Produce</span></span>
+    <h2 class="rv" style="color:#fff"><span class="zh">每个关键节点都经您确认</span><span class="en">You sign off every key milestone</span></h2>
+    <div class="steps">
+      <div class="st flow rv"><div class="no num shine">04</div><h3><span class="zh">签约付款<small>签订合同</small></span><span class="en">Contract<small>Sign &amp; deposit</small></span></h3>
+        <dl><dt><span class="zh">我们</span><span class="en">We</span></dt><dd><span class="zh">提供合同</span><span class="en">Issue the contract</span></dd></dl>
+        <dl><dt><span class="zh">您</span><span class="en">You</span></dt><dd><span class="zh">签约并支付首款，提交全部素材</span><span class="en">Sign, pay the deposit, submit all assets</span></dd></dl>
+        <div class="meta"><span class="tag m"><span class="zh">首款 50%</span><span class="en">Deposit 50%</span></span><span class="tag num">1–3 <span class="zh">天</span><span class="en">days</span></span></div></div>
+      <div class="st flow rv"><div class="no num shine">05</div><h3><span class="zh">脚本确认<small>文案与旁白</small></span><span class="en">Script<small>Copy &amp; narration</small></span></h3>
+        <dl><dt><span class="zh">我们</span><span class="en">We</span></dt><dd><span class="zh">撰写脚本及旁白文案</span><span class="en">Write the script and voice-over</span></dd></dl>
+        <dl><dt><span class="zh">您</span><span class="en">You</span></dt><dd><span class="zh">审核内容，确认定稿脚本</span><span class="en">Review and approve the final script</span></dd></dl>
+        <div class="meta"><span class="tag k"><span class="zh">书面确认</span><span class="en">Sign-off</span></span><span class="tag num">3–5 <span class="zh">天</span><span class="en">days</span></span></div></div>
+      <div class="st flow rv"><div class="no num shine">06</div><h3><span class="zh">分镜与风格<small>分镜图 + 风格样片</small></span><span class="en">Storyboard &amp; Style<small>Frames + style test</small></span></h3>
+        <dl><dt><span class="zh">我们</span><span class="en">We</span></dt><dd><span class="zh">分镜、形象设定、5~10秒风格样片</span><span class="en">Storyboard, character design, 5–10s style test</span></dd></dl>
+        <dl><dt><span class="zh">您</span><span class="en">You</span></dt><dd><span class="zh">确认画面风格、人物形象及关键镜头</span><span class="en">Approve the look, characters and key shots</span></dd></dl>
+        <div class="meta"><span class="tag m"><span class="zh">中期款 20%</span><span class="en">Interim 20%</span></span><span class="tag k"><span class="zh">书面确认</span><span class="en">Sign-off</span></span><span class="tag num">3–7 <span class="zh">天</span><span class="en">days</span></span></div></div>
+      <div class="st flow rv"><div class="no num shine">07</div><h3><span class="zh">AI生成与剪辑<small>正式制作</small></span><span class="en">AI Production<small>Generate &amp; edit</small></span></h3>
+        <dl><dt><span class="zh">我们</span><span class="en">We</span></dt><dd><span class="zh">AI生成镜头，剪辑、调色、配乐、配音、字幕</span><span class="en">Generate shots; edit, grade, score, voice and subtitle</span></dd></dl>
+        <dl><dt><span class="zh">您</span><span class="en">You</span></dt><dd><span class="zh">按需补充素材</span><span class="en">Provide extra assets if needed</span></dd></dl>
+        <div class="meta"><span class="tag num">5–15 <span class="zh">天</span><span class="en">days</span></span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 Phase 3 -->
+<section class="slide light" id="s5" data-zh="修改与交付" data-en="Phase 3">
+  <div class="aurora"><i></i><i></i><i></i></div>
+  <div class="in">
+    <span class="kicker rv">PHASE 03 · <span class="zh">修改与交付</span><span class="en">Refine &amp; Deliver</span></span>
+    <h2 class="rv"><span class="zh">粗剪 → 精剪 → 成片</span><span class="en">Rough cut → Fine cut → Final</span></h2>
+    <p class="lead rv"><span class="zh">意见汇总后统一反馈，3个工作日内回复；我们修改并输出各版本成片，验收后支付尾款。</span><span class="en">Send consolidated feedback within 3 working days. We refine and export every version; the balance is due on acceptance.</span></p>
+    <div class="pay flow rv">
+      <div><b class="num">50%</b><span class="lb zh">首款</span><span class="lb en">Deposit</span><small class="zh">合同签订后</small><small class="en">On signing</small></div>
+      <div><b class="num">20%</b><span class="lb zh">中期款</span><span class="lb en">Interim</span><small class="zh">分镜及风格样片确认后</small><small class="en">On storyboard approval</small></div>
+      <div><b class="num">30%</b><span class="lb zh">尾款</span><span class="lb en">Balance</span><small class="zh">成片验收后</small><small class="en">On final acceptance</small></div>
+    </div>
+    <div class="rules rv">
+      <p><span class="zh">修改以汇总后一次性提交的意见为准，超出包含轮次另行计费</span><span class="en">Each round is based on one consolidated set of feedback; extra rounds are billed</span></p>
+      <p><span class="zh">已确认的脚本、风格如需推翻重做，视为需求变更</span><span class="en">Redoing an approved script or style counts as a change request</span></p>
+      <p><span class="zh">每轮修改一般 1~3 个工作日</span><span class="en">Each revision round takes 1–3 working days</span></p>
+      <p><span class="zh">AI 重新生成的画面与原画面不会完全一致</span><span class="en">Regenerated AI shots will not be identical to the originals</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- 6 Contact -->
+<section class="slide" id="s6" data-zh="联系我们" data-en="Contact">
+  <div class="aurora"><i></i><i></i><i></i></div><div class="grain"></div><div class="streaks"><b></b><b></b><b></b></div>
+  <div class="in cgrid">
+    <div>
+      <span class="kicker rv"><span class="zh">联系我们</span><span class="en">Contact</span></span>
+      <h2 class="rv"><span class="zh shine">聊聊您的项目</span><span class="en shine">Let's talk about your project</span></h2>
+      <p class="lead rv"><span class="zh">告诉我们影片用途、期望时长与上线时间，我们会在 2~3 个工作日内给出创意方向与报价。</span><span class="en">Tell us what the film is for, how long it should be and when you need it. We'll reply with a creative direction and quote within 2–3 working days.</span></p>
+      <p class="co rv">福建启讯信息科技有限公司<small>Fujian Qixun Information Technology Co., Ltd.</small></p>
+    </div>
+    <div class="cards">
+      <button type="button" class="cc flow rv cpy" data-v="Sr4iio"><div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a8 8 0 01-11.8 7L3 21l2-6A8 8 0 1121 12z"/></svg></div><small><span class="zh">微信</span><span class="en">WeChat</span></small><b>Sr4iio</b><em class="cp"><span class="zh">点击复制</span><span class="en">Click to copy</span></em></button>
+      <button type="button" class="cc flow rv cpy" data-v="sunr15834@gmail.com"><div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div><small><span class="zh">邮箱</span><span class="en">Email</span></small><b>sunr15834@gmail.com</b><em class="cp"><span class="zh">点击复制</span><span class="en">Click to copy</span></em></button>
+    </div>
+  </div>
+  <div class="foot">© 2026 福建启讯信息科技有限公司 · Fujian Qixun Information Technology Co., Ltd.</div>
+</section>
+
+</main>
+
+<script>
+(function(){
+  const H=document.documentElement,deck=document.getElementById('deck'),slides=[...document.querySelectorAll('.slide')],dots=document.getElementById('dots'),pg=document.getElementById('pg'),bar=document.getElementById('bar');
+  const pad=n=>String(n).padStart(2,'0');
+  let lang='zh-CN';
+  try{const s=localStorage.getItem('qx_lang');if(s)lang=s;else if(!/^zh/i.test(navigator.language||''))lang='en'}catch(e){}
+  try{const q=new URLSearchParams(location.search).get('lang');if(q)lang=/^en/i.test(q)?'en':'zh-CN'}catch(e){}
+  const lb=[...document.querySelectorAll('.lang button')];
+  slides.forEach(s=>{const b=document.createElement('button');b.onclick=()=>s.scrollIntoView({behavior:'smooth'});dots.appendChild(b)});
+  function setLang(l){lang=l;H.lang=l;lb.forEach(b=>b.classList.toggle('on',b.dataset.l===l));document.title=l==='en'?'AI Video Production · Qixun':'AI宣传片制作 · 启讯科技';[...dots.children].forEach((d,i)=>{d.title=slides[i].dataset[l==='en'?'en':'zh'];d.setAttribute('aria-label',d.title)});try{localStorage.setItem('qx_lang',l)}catch(e){}}
+  lb.forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+  setLang(lang);
+  let cur=0;
+  function set(i){cur=i;[...dots.children].forEach((d,j)=>d.classList.toggle('on',j===i));pg.textContent=pad(i+1)+' / '+pad(slides.length);bar.style.width=((i+1)/slides.length*100)+'%';document.body.classList.toggle('lt',slides[i].classList.contains('light'))}
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');if(e.intersectionRatio>=.5)set(slides.indexOf(e.target))}})},{root:deck,threshold:[.15,.5]});
+  slides.forEach(s=>io.observe(s));set(0);slides[0].classList.add('on');
+  document.querySelectorAll('a[href^="#s"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}}));
+  document.addEventListener('keydown',e=>{const n={ArrowDown:1,PageDown:1,' ':1,ArrowRight:1,ArrowUp:-1,PageUp:-1,ArrowLeft:-1}[e.key];if(n==null||(e.key===' '&&e.target.closest('button,a')))return;e.preventDefault();slides[Math.max(0,Math.min(slides.length-1,cur+n))].scrollIntoView({behavior:'smooth'})});
+  document.querySelectorAll('.cpy').forEach(btn=>{const cp=btn.querySelector('.cp'),orig=cp.innerHTML,v=btn.dataset.v,val=btn.querySelector('b');
+    const ok=()=>{cp.textContent=lang==='en'?'Copied':'已复制';setTimeout(()=>cp.innerHTML=orig,1800)};
+    const no=()=>{const r=document.createRange();r.selectNodeContents(val);const sel=getSelection();sel.removeAllRanges();sel.addRange(r);cp.textContent=lang==='en'?'Selected, press Ctrl+C':'已选中，请手动复制'};
+    btn.onclick=()=>{try{navigator.clipboard.writeText(v).then(ok,no)}catch(e){no()}}});
+})();
+</script>
+</body>
+</html>
